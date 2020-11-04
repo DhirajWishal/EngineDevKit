@@ -83,13 +83,13 @@ namespace EDK
 			bool IsOnRepeat() const { return eInputType == KeyInputType::KEY_INPUT_Type_REPEAT; }
 
 		public:
-			const char* pName = "";	// Name of the key. 
+			const char* pName = "";	// Name of the key.
 			KeyInputType eInputType = KeyInputType::KEY_INPUT_Type_RELEASE;	// Input type/ activation.
 			UI32 scanCode = 0;	// The scancode of the key.
 		};
 
 		/**
-		 * Key Input Supplier for the EDK. 
+		 * Key Input Supplier for the EDK.
 		 * This is the default supplier which supplies key inputs to the engine.
 		 *
 		 * @required: All the keys are required to be given the scan code which is platform specific.

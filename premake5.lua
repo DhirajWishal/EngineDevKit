@@ -66,10 +66,14 @@ IncludeLib["FreeImageD"] = "$(SolutionDir)Dependencies/ThirdParty/Binaries/FreeI
 IncludeLib["FreeImageR"] = "$(SolutionDir)Dependencies/ThirdParty/Binaries/FreeImage/Release"
 
 group "Modules"
+include "Modules/BuildAll/BuildAll.lua"
+
 include "Modules/Core/Core.lua"
 include "Modules/ErrorHandler/ErrorHandler.lua"
 include "Modules/GraphicsCore/GraphicsCore.lua"
 include "Modules/Inputs/Inputs.lua"
+include "Modules/Maths/Maths.lua"
+include "Modules/Memory/Memory.lua"
 include "Modules/VulkanBackend/VulkanBackend.lua"
 
 include "Tests/TestIncludes.lua"

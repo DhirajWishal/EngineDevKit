@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 #include "ErrorHandler/Logger.h"
-#include "Core/Maths/Vector/Vector3.h"
-#include "Core/Memory/StaticAllocator.h"
+#include "Maths/Vector/Vector3.h"
+#include "Memory/StaticAllocator.h"
 
-#include "Core/Maths/Matrix/Matrix22.h"
+#include "Maths/Matrix/Matrix22.h"
 
 int main()
 {

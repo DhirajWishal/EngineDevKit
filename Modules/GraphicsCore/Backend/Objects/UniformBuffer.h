@@ -57,7 +57,7 @@ namespace EDK
 
 			/**
 			 * Get the uniform buffer type.
-			 * 
+			 *
 			 * @return: EDK::GraphcisCore::UniformType enum.
 			 */
 			UniformType GetType() const { return type; }

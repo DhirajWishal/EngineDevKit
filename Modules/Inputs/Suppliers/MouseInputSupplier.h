@@ -67,7 +67,7 @@ namespace EDK
 			 */
 			float GetValue() const { return value; }
 
-			float value = 0.0f;	// Scroll value. 
+			float value = 0.0f;	// Scroll value.
 		};
 
 		/**
