@@ -16,7 +16,7 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		namespace VulkanBackend
 		{

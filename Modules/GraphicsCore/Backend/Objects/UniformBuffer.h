@@ -9,7 +9,7 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		/**
 		 * Uniform Type enum.

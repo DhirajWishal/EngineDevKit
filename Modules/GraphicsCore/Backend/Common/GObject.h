@@ -7,7 +7,7 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		/**
 		 * Graphics Object for the EDK.

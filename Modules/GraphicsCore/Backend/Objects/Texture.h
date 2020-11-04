@@ -10,7 +10,7 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		/**
 		 * Texture Extent structure containing the extent information of the texture.

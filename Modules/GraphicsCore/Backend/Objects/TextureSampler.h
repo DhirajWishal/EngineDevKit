@@ -9,7 +9,7 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		/**
 		 * Texture Sampler for the EDK.

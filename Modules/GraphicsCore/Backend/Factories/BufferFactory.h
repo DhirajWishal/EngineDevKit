@@ -11,7 +11,7 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		/**
 		 * Buffer Factory for the EDK.

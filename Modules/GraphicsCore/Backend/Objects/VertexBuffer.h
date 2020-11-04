@@ -10,7 +10,7 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		/**
 		 * Vertex Attributes structure containing information about a single vertex attribute.

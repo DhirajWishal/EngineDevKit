@@ -10,7 +10,7 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		/**
 		 * Graphics Buffer object for the EDK.

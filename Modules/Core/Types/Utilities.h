@@ -232,7 +232,7 @@ namespace EDK
 		case Format::FORMAT_RGB_64_SINT:					return 24;
 		case Format::FORMAT_RGBA_64_UINT:					return 32;
 		case Format::FORMAT_RGBA_64_SINT:					return 32;
-		default:	Logger::LogError(TEXT("Unsupported or invalid format!"));	break;
+		default:	ErrorHandler::Logger::LogError(TEXT("Unsupported or invalid format!"));	break;
 		}
 
 		return 0;

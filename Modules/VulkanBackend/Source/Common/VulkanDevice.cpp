@@ -11,7 +11,7 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		namespace VulkanBackend
 		{
@@ -265,16 +265,16 @@ namespace EDK
 
 				switch (messageSeverity) {
 				case VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT:
-					Logger::LogDebug(WString(TEXT("") + (myMessageStatement + myMessagePreStatement + StringToWString(pCallbackData->pMessage))).c_str());
+					ErrorHandler::Logger::LogDebug(WString(TEXT("") + (myMessageStatement + myMessagePreStatement + StringToWString(pCallbackData->pMessage))).c_str());
 					break;
 				case VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT:
-					Logger::LogInfo(WString(TEXT("") + (myMessageStatement + myMessagePreStatement + StringToWString(pCallbackData->pMessage))).c_str());
+					ErrorHandler::Logger::LogInfo(WString(TEXT("") + (myMessageStatement + myMessagePreStatement + StringToWString(pCallbackData->pMessage))).c_str());
 					break;
 				case VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT:
-					Logger::LogWarn(WString(TEXT("") + (myMessageStatement + myMessagePreStatement + StringToWString(pCallbackData->pMessage))).c_str());
+					ErrorHandler::Logger::LogWarn(WString(TEXT("") + (myMessageStatement + myMessagePreStatement + StringToWString(pCallbackData->pMessage))).c_str());
 					break;
 				case VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT:
-					Logger::LogError(WString(TEXT("") + (myMessageStatement + myMessagePreStatement + StringToWString(pCallbackData->pMessage))).c_str());
+					ErrorHandler::Logger::LogError(WString(TEXT("") + (myMessageStatement + myMessagePreStatement + StringToWString(pCallbackData->pMessage))).c_str());
 					break;
 				default:
 					std::wcerr << myMessageStatement << myMessagePreStatement << StringToWString(pCallbackData->pMessage) << std::endl;
@@ -312,7 +312,7 @@ namespace EDK
 			{
 				// Check if the validation layers are supported.
 				if (initInfo.enableValidation && !CheckValidationLayerSupport(validationLayers))
-					Logger::LogError(TEXT("Requested validation layers are not available!"));
+					ErrorHandler::Logger::LogError(TEXT("Requested validation layers are not available!"));
 
 				// Application info.
 				VkApplicationInfo appInfo = {};
@@ -386,7 +386,7 @@ namespace EDK
 			 */
 			static void GLFWErrorCallback(I32 errorCode, const char* pDescription)
 			{
-				Logger::LogError(WString(TEXT("GLFW -> ") + StringToWString(pDescription)).c_str());
+				ErrorHandler::Logger::LogError(WString(TEXT("GLFW -> ") + StringToWString(pDescription)).c_str());
 			}
 
 			void VulkanDevice::InitializeDisplay()
@@ -451,7 +451,7 @@ namespace EDK
 
 				if (deviceCount == 0)
 				{
-					Logger::LogError(TEXT("Failed to find GPUs with Vulkan support!"));
+					ErrorHandler::Logger::LogError(TEXT("Failed to find GPUs with Vulkan support!"));
 					return;
 				}
 
@@ -481,7 +481,7 @@ namespace EDK
 				//  Check if a physical device was found.
 				if (vPhysicalDevice == VK_NULL_HANDLE)
 				{
-					Logger::LogError(TEXT("A suitable physical device was not found!"));
+					ErrorHandler::Logger::LogError(TEXT("A suitable physical device was not found!"));
 					return;
 				}
 

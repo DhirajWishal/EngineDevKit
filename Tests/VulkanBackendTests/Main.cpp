@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 #include "VulkanBackend/Common/VulkanDevice.h"
-using namespace EDK::GraphicsCore;
-using namespace EDK::GraphicsCore::VulkanBackend;
+using namespace EDK::Graphics;
+using namespace EDK::Graphics::VulkanBackend;
 
 /** CONCEPT
  * Create a file named *.das (EDK Asset Serialization) which stores all the vertex data in binary.

@@ -44,7 +44,7 @@ namespace EDK
 			: x(0.0f), y(0.0f)
 		{
 			if ((list.size() > 4) || (list.size() < 4))
-				Logger::LogError(TEXT("The size of the provided list does not match the current Matrix size!"));
+				ErrorHandler::Logger::LogError(TEXT("The size of the provided list does not match the current Matrix size!"));
 
 			Memory::MoveData(this, Cast<const void*>(list.begin()), list.size() * sizeof(float));
 		}

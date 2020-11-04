@@ -11,14 +11,14 @@
 
 namespace EDK
 {
-	namespace GraphicsCore
+	namespace Graphics
 	{
 		/**
 		 * Device Init Info structure.
 		 * This structure contains information required to initialize the device.
 		 */
 		struct DeviceInitInfo {
-			const char* pTitle = "EDK";	// The title of the display/ window.
+			const char* pTitle = "Engine Dev Kit";	// The title of the display/ window.
 			const char* pIconFile = nullptr;	// The icon file path.
 
 			UI32 windowWidth = 1280;	// The width of the window.

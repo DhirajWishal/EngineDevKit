@@ -15,7 +15,7 @@ namespace EDK
 			: x(0.0f), y(0.0f), z(0.0f), w(0.0f)
 		{
 			if ((list.size() > 4) || (list.size() < 4))
-				Logger::LogError(TEXT("The size of the provided list does not match the current Vector size! Expected size is 4."));
+				ErrorHandler::Logger::LogError(TEXT("The size of the provided list does not match the current Vector size! Expected size is 4."));
 
 			Memory::MoveData(this, Cast<const void*>(list.begin()), list.size() * sizeof(float));
 		}
@@ -29,7 +29,7 @@ namespace EDK
 		Vector4 Vector4::operator=(const std::initializer_list<float>& list)
 		{
 			if ((list.size() > 4) || (list.size() < 4))
-				Logger::LogError(TEXT("The size of the provided list does not match the current Vector size! Expected size is 4."));
+				ErrorHandler::Logger::LogError(TEXT("The size of the provided list does not match the current Vector size! Expected size is 4."));
 
 			Memory::MoveData(this, Cast<const void*>(list.begin()), list.size() * sizeof(float));
 

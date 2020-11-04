@@ -14,6 +14,6 @@
  * @param exp: The expression.
  * @msg: The message to be logged if failed.
  */
-#define EDK_VK_ASSERT(exp, msg)	if (exp != VK_SUCCESS)	::EDK::Logger::LogError(TEXT(msg))
+#define EDK_VK_ASSERT(exp, msg)	if (exp != VK_SUCCESS)	::EDK::ErrorHandler::Logger::LogError(TEXT(msg))
 
 #endif // !_EDK_VULKAN_BACKEND_MACROS_H

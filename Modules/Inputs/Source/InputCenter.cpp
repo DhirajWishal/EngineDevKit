@@ -15,14 +15,14 @@ namespace EDK
 			// Check if the supplier is valid.
 			if (!pKeyInputSupplier)
 			{
-				Logger::LogError(TEXT("Invalid key input supplier pointer."));
+				ErrorHandler::Logger::LogError(TEXT("Invalid key input supplier pointer."));
 				return;
 			}
 
 			// Check if the supplier is already stored.
 			if (pInputSuppliers[pKeyInputSupplier->GetName()])
 			{
-				Logger::LogError(TEXT("Key input supplier is already available."));
+				ErrorHandler::Logger::LogError(TEXT("Key input supplier is already available."));
 				return;
 			}
 
@@ -38,14 +38,14 @@ namespace EDK
 			// Check if the supplier is valid.
 			if (!pMouseInputSupplier)
 			{
-				Logger::LogError(TEXT("Invalid mouse input supplier pointer."));
+				ErrorHandler::Logger::LogError(TEXT("Invalid mouse input supplier pointer."));
 				return;
 			}
 
 			// Check if the supplier is already stored.
 			if (pInputSuppliers[pMouseInputSupplier->GetName()])
 			{
-				Logger::LogError(TEXT("Mouse input supplier is already available."));
+				ErrorHandler::Logger::LogError(TEXT("Mouse input supplier is already available."));
 				return;
 			}
 
@@ -69,7 +69,7 @@ namespace EDK
 
 			// Check and warn if the supplier is not available.
 			if (!pSupplier)
-				Logger::LogError(TEXT("Requested supplier is not submitted/ available!"));
+				ErrorHandler::Logger::LogError(TEXT("Requested supplier is not submitted/ available!"));
 
 			return pSupplier;
 		}

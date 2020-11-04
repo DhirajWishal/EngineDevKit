@@ -209,7 +209,7 @@ namespace EDK
 
 					if (!__newAddr)
 					{
-						Logger::LogError(TEXT("Unable to allocate memory!"));
+						ErrorHandler::Logger::LogError(TEXT("Unable to allocate memory!"));
 
 #ifdef EDK_DEBUG
 						__debugbreak();
@@ -221,7 +221,7 @@ namespace EDK
 				}
 				catch (const std::exception&)
 				{
-					Logger::LogError(TEXT("Unable to allocate memory!"));
+					ErrorHandler::Logger::LogError(TEXT("Unable to allocate memory!"));
 
 #ifdef EDK_DEBUG
 					__debugbreak();
@@ -248,7 +248,7 @@ namespace EDK
 
 					if (!__newAddr)
 					{
-						Logger::LogError(TEXT("Unable to allocate memory!"));
+						ErrorHandler::Logger::LogError(TEXT("Unable to allocate memory!"));
 
 #ifdef EDK_DEBUG
 						__debugbreak();
@@ -260,7 +260,7 @@ namespace EDK
 				}
 				catch (const std::exception&)
 				{
-					Logger::LogError(TEXT("Unable to allocate memory!"));
+					ErrorHandler::Logger::LogError(TEXT("Unable to allocate memory!"));
 
 #ifdef EDK_DEBUG
 					__debugbreak();
