@@ -18,7 +18,7 @@ Also the EDK requires Visual Studio (we recommend using 2019) with the C++ Workl
 
 First clone the repository to a local directory.
 ```
-> git clone --recursive https://github.com/DhirajWishal/EngineDevKit EngineDevKit
+> git clone https://github.com/DhirajWishal/EngineDevKit EngineDevKit
 ```
 For Windows,
 Run the `GenerateProjects.bat` file which automatically generates the project and solution files.

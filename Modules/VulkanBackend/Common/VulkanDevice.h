@@ -20,6 +20,8 @@ namespace EDK
 	{
 		namespace VulkanBackend
 		{
+			class VulkanBackendInstance;
+
 			/**
 			 * Vulkan Queue obect.
 			 * Vulkan uses queues to perform tasks.
@@ -154,20 +156,6 @@ namespace EDK
 
 			public:
 				/**
-				 * Get the Vulkan Instance.
-				 *
-				 * @return: VkInstance handle.
-				 */
-				EDK_FORCEINLINE VkInstance GetInstance() const { return vInstance; }
-
-				/**
-				 * Get the Vulkan Debug Messenger.
-				 *
-				 * @return: VkDebugUtilsMessengerEXT handle.
-				 */
-				EDK_FORCEINLINE VkDebugUtilsMessengerEXT GetDebugMessenger() const { return vDebugMessenger; }
-
-				/**
 				 * Get the GLFW window handle.
 				 *
 				 * @return: GLFWwindow pointer.
@@ -203,26 +191,6 @@ namespace EDK
 				EDK_FORCEINLINE VulkanQueue GetQueue() const { return vQueue; }
 
 			private:
-				/**
-				 * Initialize the Vulkan Instance.
-				 */
-				void InitializeInstance();
-
-				/**
-				 * Terminate the Vulkan Instance.
-				 */
-				void TerminateInstance();
-
-				/**
-				 * Initialize the Vulkan Debugger.
-				 */
-				void InitializeDebugger();
-
-				/**
-				 * Terminate the Vulkan Debugger.
-				 */
-				void TerminateDebugger();
-
 				/**
 				 * Initialize the display object.
 				 */
@@ -308,12 +276,8 @@ namespace EDK
 			private:
 				VulkanQueue vQueue = {};	// Vulkan queue object.
 
-				std::vector<const char*> validationLayers;	// Validation layers.
 				std::vector<const char*> instanceExtensions;	// Instance extensions.
 				std::vector<const char*> deviceExtensions;	// Device extensions.
-
-				VkInstance vInstance = VK_NULL_HANDLE;	// Vulkan instance handle.
-				VkDebugUtilsMessengerEXT vDebugMessenger = VK_NULL_HANDLE;	// Vulkan debug messenger handle.
 
 				GLFWwindow* pWindowHandle = nullptr;	// The GLFW window pointer.
 				VkSurfaceKHR vSurface = VK_NULL_HANDLE;	// The display surface.

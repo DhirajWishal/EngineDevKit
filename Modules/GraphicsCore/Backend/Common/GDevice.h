@@ -5,7 +5,7 @@
 #ifndef _EDK_GRAPHICS_CORE_DEVICE_H
 #define _EDK_GRAPHICS_CORE_DEVICE_H
 
-#include "GObject.h"
+#include "RenderTarget.h"
 #include "Defines.h"
 #include "Core/Types/DataTypes.h"
 
@@ -13,6 +13,8 @@ namespace EDK
 {
 	namespace Graphics
 	{
+		class BackendInstance;
+
 		/**
 		 * Device Init Info structure.
 		 * This structure contains information required to initialize the device.
@@ -134,6 +136,20 @@ namespace EDK
 			virtual void Terminate() {}
 
 			/**
+			 * Set the parent instance which created the device.
+			 *
+			 * @param pParentInstance: The parent instance pointer.
+			 */
+			EDK_FORCEINLINE void SetParentInstance(BackendInstance* pParentInstance) { this->pBackendInstance = pParentInstance; }
+
+			/**
+			 * Get the parent instance pointer.
+			 *
+			 * @return: The pointer to the parent instance.
+			 */
+			EDK_FORCEINLINE BackendInstance* GetParentInstance() const { return this->pBackendInstance; }
+
+			/**
 			 * Get the anti aliasing samples supported by the device.
 			 *
 			 * @return: EDK::GraphicsCore::AntiAliasingSamples enum.
@@ -175,7 +191,24 @@ namespace EDK
 			 */
 			virtual void EndFrame() {}
 
+		public:
+			/**
+			 * Create a render target to render object to.
+			 *
+			 * @return: The pointer to the created render target.
+			 */
+			virtual RenderTarget* CreateRenderTarget() { return nullptr; }
+
+			/**
+			 * Destroy a created render target object.
+			 *
+			 * @param pRenderTarget: The created render target pointer.
+			 */
+			virtual void DestroyRenderTarget(RenderTarget* pRenderTarget) {}
+
 		protected:
+			BackendInstance* pBackendInstance = nullptr;	// The backend object pointer which created the device.
+
 			DeviceInitInfo initInfo = {};	// Initialize information of the device.
 			I8 frameIndex = 0;	// The current frame index.
 		};
